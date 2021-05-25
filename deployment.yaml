@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-training
+  labels:
+    app: training
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: training
+  template:
+    metadata:
+      labels:
+        app: training
+    spec:
+      containers:
+      - name: training
+        image: tylerlinder/docker-training:latest
+        ports:
+        - containerPort: 80

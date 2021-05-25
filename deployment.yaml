@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: docker-training
   labels:
-    app: training
+    app: docker-training
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: training
+      app: docker-training
   template:
     metadata:
       labels:
-        app: training
+        app: docker-training
     spec:
       containers:
-      - name: training
+      - name: docker-training
         image: tylerlinder/docker-training:latest
         ports:
         - containerPort: 80
